@@ -1,0 +1,160 @@
+body {
+    color: #494949;
+    font-weight: 400;
+}
+
+.none {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    display: block;
+    margin-left: -10000px;
+    background: transparent;
+    font-size: 0;
+}
+
+.container {
+    width: 1400px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 10px;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav {
+    font-weight: 500;
+    color:#292929;
+}
+
+.header-nav ul {
+    display: flex;
+}
+
+.header-nav li:not(:last-child) {
+    margin-right: 90px;
+}
+
+
+/*---SearchForm---*/
+
+.search-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.search-form {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.search-form input {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #d6d6d6;
+    border-radius: 5px;
+    outline: none;
+    background: #fff;
+    color: #494949;
+}
+
+.search-form button {
+    position: absolute; 
+    top: 0;
+    right: 0px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #494949;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-form button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+
+
+/*---Content---*/
+
+.table-header {
+    background-color: #494949;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #fff;
+
+
+}
+
+.main-table li {
+    border-radius: 3px;
+    padding: 7px 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+}
+.table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+}
+.col-1 {
+    flex-basis: 8%;
+    text-align: center;
+}
+
+
+.col-2 {
+    flex-basis: 55%;
+    padding-left: 2%;
+}
+
+
+.col-3 {
+    flex-basis: 10%;
+    text-align: center;
+
+}
+.col-4 {
+    flex-basis: 10%;
+    text-align: center;
+
+}
+.col-5 {
+    flex-basis: 10%;
+    text-align: center;
+
+}
+.col-6 {
+    flex-basis: 7%;
+    text-align: center;
+
+}
