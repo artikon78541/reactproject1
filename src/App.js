@@ -2,13 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Content from './components/Content/Content';
+import { BrowserRouter} from 'react-router-dom';
 
-const App = () => {
+
+const App = (props) => {
+
+
+
   return (
-    <div className="app-wrapper">
-      <Header />
-      <Content />
-    </div>
+    <BrowserRouter>
+      <div className="app-wrapper">
+        <Header newSearchText={props.state.headerPage.newSearchText} dispatch={props.dispatch} />
+        <Content parts={props.state.partTablePage.searchedParts} />
+      </div>
+    </BrowserRouter>
   );
 }
 
