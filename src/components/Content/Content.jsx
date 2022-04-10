@@ -1,13 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import MainContent from "./MainContent/MainContent.jsx";
-import PartTable from "./PartTable/PartTable.jsx";
 import PartTableContainer from "./PartTable/PartTableContainer.jsx";
 
 
-const Content = (props) => {
-
-
+const Content = () => {
 
     return (
         

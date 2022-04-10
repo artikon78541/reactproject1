@@ -35,10 +35,10 @@ const Header = (props) => {
             <div className="header-login">LOGIN</div>
         </div>
         <div className="search-row">
-            <form className="search-form" action="" method="get">
+            <div className="search-form">
                 <input ref={searchText} value={props.newSearchText} onChange={onSearchTextChange} name="s" placeholder="Введите номер детали..." type="text"></input>
-                <button type="submit" onClick={search}></button>
-            </form>
+                <button onClick={search}></button>
+            </div>
         </div>
     </div>
 </header>

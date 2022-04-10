@@ -190,12 +190,12 @@ body {
   font-family: FontAwesome;
   font-size: 16px;
   color: #F9F0DA;
-}
+} */
 
 
 /* ---Content--- */
 
-/* .table-header {
+.table-header {
   background-color: #494949;
   font-size: 14px;
   text-transform: uppercase;
@@ -249,4 +249,4 @@ body {
   flex-basis: 7%;
   text-align: center;
 
-} */
+}

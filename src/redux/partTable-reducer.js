@@ -1,6 +1,7 @@
 const SEARCH_PART = 'SEARCH-PART'
 
 
+
 let initialState = {
     parts: [
         {id:1, partNum:'4324102227', partName: 'фильтр', qty: 12, deliveryDate: '27.06.22', price: 1800},
@@ -9,27 +10,16 @@ let initialState = {
         {id:4, partNum:'978670', partName: 'амортизатор', qty: 2, deliveryDate: '09.06.22', price: 4560},
         {id:5, partNum:'07654', partName: 'гайка', qty: 8, deliveryDate: '09.06.22', price: 52}
       ],
-    searchedParts:[]
+    
 }
 
-// export const partTableReducer = (state=initialState, action) => {
-
-//     if(action.type===SEARCH_PART){
-//         let parts = state.partTablePage.parts.filter(el => el.partNum === action.searchText)
-//         state.partTablePage.searchedParts = [...parts]
-        
-//       }
-
-//       return state;
-// }
 
 export const partTableReducer = (state=initialState, action) => {
-debugger
-  switch(action.type){
+
+    let stateCopy = {...state};
+    switch(action.type){
     case SEARCH_PART:
-      let parts = state.parts.filter(el => el.partNum === action.searchText);
-      let stateCopy = {...state};
-      stateCopy.parts = [...state.parts];
+      let parts = stateCopy.parts.filter(el => el.partNum === action.newText);
       stateCopy.parts = [...parts];
       return stateCopy;
     default:
@@ -37,10 +27,11 @@ debugger
   }
 }
 
+
 export const searchPartActionCreator = (text) => {
 
     return{
-        type:SEARCH_PART, searchText: text
+        type:SEARCH_PART, newText:text
     }
   }
   

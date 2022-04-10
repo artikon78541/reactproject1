@@ -20,7 +20,6 @@ export const headerReducer = (state=initialState, action) => {
 
 }
 
-
 export const updateNewSearchTextActionCreator = (text) => {
   return{
       type:UPDATE_NEW_SEARCH_TEXT, newText: text
