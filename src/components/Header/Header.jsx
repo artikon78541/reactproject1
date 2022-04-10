@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {searchPartActionCreator, updateNewSearchTextActionCreator} from './../../redux/state'
+
 
 
 
@@ -9,12 +9,13 @@ const Header = (props) => {
     let searchText = React.createRef();
 
     let search = () => {
-        props.dispatch(searchPartActionCreator())
+        let text = searchText.current.value;
+        props.searchPart(text)
     }
     
     let onSearchTextChange = () => {
         let text = searchText.current.value;
-        props.dispatch(updateNewSearchTextActionCreator(text))
+        props.updateNewSearchText(text)
     }
     
 

@@ -1,21 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Content from './components/Content/Content';
-import { BrowserRouter} from 'react-router-dom';
 
 
-const App = (props) => {
 
 
+const App = () => {
 
   return (
-    <BrowserRouter>
       <div className="app-wrapper">
-        <Header newSearchText={props.state.headerPage.newSearchText} dispatch={props.dispatch} />
-        <Content parts={props.state.partTablePage.searchedParts} />
+        {/* <HeaderContainer newSearchText={props.state.headerPage.newSearchText} dispatch={props.dispatch} store ={props.store}/> */}
+        <HeaderContainer />
+        {/* <Content parts={props.state.partTablePage.searchedParts} /> */}
+        <Content />
       </div>
-    </BrowserRouter>
   );
 }
 

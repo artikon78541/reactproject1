@@ -1,5 +1,6 @@
-const SEARCH_PART = 'SEARCH-PART'
-const UPDATE_NEW_SEARCH_TEXT = 'UPDATE-NEW-SEARCH-TEXT'
+import { headerReducer } from "./header-reducer";
+import { partTableReducer } from "./partTable-reducer";
+
 
 let store = {
 
@@ -35,16 +36,21 @@ let store = {
 
 
   dispatch(action){
-    if(action.type===SEARCH_PART){
-      let parts = this._state.partTablePage.parts.filter(el => el.partNum === this._state.headerPage.newSearchText)
-      // state.partTablePage.searchedParts = state.partTablePage.searchedParts.push.apply(state.partTablePage.searchedParts, parts);
-      this._state.partTablePage.searchedParts = [...parts]
-      this._callSubscriber(this._state)
-    }
-    else if(action.type === UPDATE_NEW_SEARCH_TEXT){
-      this._state.headerPage.newSearchText = action.newText;
-      this._callSubscriber(this._state);
-    }
+
+    this._state.headerPage = headerReducer(this._state.headerPage, action);
+    this._state = partTableReducer(this._state, action);
+    this._callSubscriber(this._state);
+    
+    // if(action.type===SEARCH_PART){
+    //   let parts = this._state.partTablePage.parts.filter(el => el.partNum === this._state.headerPage.newSearchText)
+    //   // state.partTablePage.searchedParts = state.partTablePage.searchedParts.push.apply(state.partTablePage.searchedParts, parts);
+    //   this._state.partTablePage.searchedParts = [...parts]
+    //   this._callSubscriber(this._state)
+    // }
+    // else if(action.type === UPDATE_NEW_SEARCH_TEXT){
+    //   this._state.headerPage.newSearchText = action.newText;
+    //   this._callSubscriber(this._state);
+    // }
 
   }
   
@@ -53,17 +59,17 @@ let store = {
 
 }
 
-export const searchPartActionCreator = () => {
-  return{
-      type:SEARCH_PART
-  }
-}
+// export const searchPartActionCreator = () => {
+//   return{
+//       type:SEARCH_PART
+//   }
+// }
 
-export const updateNewSearchTextActionCreator = (text) => {
-  return{
-      type:UPDATE_NEW_SEARCH_TEXT, newText: text
-  }
-}
+// export const updateNewSearchTextActionCreator = (text) => {
+//   return{
+//       type:UPDATE_NEW_SEARCH_TEXT, newText: text
+//   }
+// }
 
 // let rerenderEntireTree = () => {
 //   console.log('state changed')
