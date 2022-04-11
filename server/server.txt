@@ -1,0 +1,9 @@
+
+npm init -y //инициализация сервера
+npm install express pg pg-hstore sequelize cors dotenv  // установка библиотек для сервера
+npm install -D nodemon  // установка nodemon
+
+в package.json -->    "scripts": {
+                            "dev": "nodemon index.js"
+                        }
+
